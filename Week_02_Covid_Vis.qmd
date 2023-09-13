@@ -33,7 +33,10 @@ ggplot(
 ) +
   geom_col(width = 0.5, position = position_dodge(0.7)) +  
   theme(axis.text.x = element_text(angle = 90)) +
-  scale_y_continuous(labels = scales::comma)
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Number of deaths related to COVID across various states"
+  )
   
 ```
 
@@ -47,7 +50,7 @@ covid_data_count |>
   filter(race != "Total") |> 
   ggplot(aes(x = forcats::fct_reorder(race, Deaths), y = Deaths)) + geom_col() + scale_y_continuous(labels = scales::comma) + 
   labs(
-    title = "The Number of Deaths vs a Specific Race in NY",
+    title = "The Number of Deaths related to COVID vs a Specific Race in NY",
     x = "Race",
     y = "Deaths"
   )

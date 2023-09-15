@@ -26,7 +26,7 @@ ggplot(covid_data_count, aes(x = date, y = Deaths)) + geom_point()
 
 
 
-```{r first_plot}
+```{r}
 ggplot(
   data = covid_data_count,
   mapping = aes(x = state_name, y = Deaths)
